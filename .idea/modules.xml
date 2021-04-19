@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TreeMapExample.iml" filepath="$PROJECT_DIR$/TreeMapExample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TreeSetExample.iml" filepath="$PROJECT_DIR$/TreeSetExample.iml" />
     </modules>
   </component>
 </project>

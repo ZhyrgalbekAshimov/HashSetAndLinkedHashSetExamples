@@ -1,27 +1,32 @@
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
-//Список продуктов с датами истечения их сроков. 
+// Есть список автомобилей с их техническим состоянием:
+// Good     - хорошее состояние
+// Bad      - плохое состояния
+// Unusable - непригодный для использования
+
+// Comparator сравнивает их состояния и выводит по 1 автомобилю по каждому из состояний в порядке возврастания (Unusable, Bad, Good)
+
 public class Main {
 
     public static void main(String[] args) {
 
-        Map<String, Product> tm = new TreeMap<>(new DateComparator());
-        tm.put("09-05-2020", new Product("Sausage"));
-        tm.put("01-05-2020", new Product("Sardines"));
-        tm.put("20-10-2023", new Product("Butter"));
-        tm.put("01-05-2021", new Product("Ice cream"));
-        tm.put("18-04-2025", new Product("Milk"));
-        tm.put("25-12-2019", new Product("Yogurt"));
-        tm.put("13-03-2018", new Product("Sandwich"));
+        Set<Car> ts = new TreeSet<> (new CarComparator());
 
-        System.out.printf("%-14s %-14s %-14s %n", "Expire date", "Product name", "Product ID");
+        ts.add(new Car("Audi", "2005", Condition.BAD));
+        ts.add(new Car("BMW", "2008", Condition.GOOD));
+        ts.add(new Car("Volvo", "1999", Condition.GOOD));
+        ts.add(new Car("Mercedes", "2000", Condition.UNUSABLE));
+        ts.add(new Car("Honda", "2000", Condition.BAD));
+
+
+        System.out.printf("%-14s %-14s %-14s %-14s %n", "Model", "Year produce", "Condition", "ID");
         System.out.println("-----------------------------------------------------");
-        for(Map.Entry<String,Product> entry : tm.entrySet()) {
-            String key = entry.getKey();
-            Product value = entry.getValue();
-            int productId = value.getId();
-            System.out.printf("%-14s %-14s %d %n", key, value, productId);
+        for(Car c : ts) {
+            String yearOfProduce = c.getYearOfProduce();
+            int id = c.getId();
+            String cond = c.getCondition().toString();
+            System.out.printf("%-14s %-14s %-14s %d %n", c, yearOfProduce, cond, id);
         }
     }
 }
