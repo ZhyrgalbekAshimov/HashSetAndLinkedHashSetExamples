@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TreeSetExample.iml" filepath="$PROJECT_DIR$/TreeSetExample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HashSetExample.iml" filepath="$PROJECT_DIR$/HashSetExample.iml" />
     </modules>
   </component>
 </project>
